@@ -14,6 +14,7 @@ spec:
   - port: 8080
     protocol: TCP
     targetPort: 8080
+    appProtocol: http
   selector:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/name: {{ template "postgres-operator.name" . }}

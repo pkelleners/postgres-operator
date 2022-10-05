@@ -16,6 +16,7 @@ spec:
       nodePort: {{ .Values.service.nodePort }}
       {{- end }}
       protocol: TCP
+      appProtocol: http
   selector:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/name: {{ template "postgres-operator-ui.name" . }}

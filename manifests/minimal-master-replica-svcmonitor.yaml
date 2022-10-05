@@ -1,5 +1,5 @@
 # Here we use https://github.com/prometheus-community/helm-charts/charts/kube-prometheus-stack
-# Please keep the ServiceMonitor's label same as the Helm release name of kube-prometheus-stack 
+# Please keep the ServiceMonitor's label same as the Helm release name of kube-prometheus-stack
 
 apiVersion: v1
 kind: Namespace
@@ -83,6 +83,7 @@ spec:
     - name: exporter
       port: 9187
       targetPort: exporter
+      appProtocol: http
   selector:
     application: spilo
     cluster-name: acid-minimal-cluster
